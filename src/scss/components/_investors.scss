@@ -1,0 +1,106 @@
+.investors {
+  &__wrapper {
+    @include adaptiveValueModified("padding-top", 10, 25, 320, 25, 767, 59, 1330, 73, 1600, 73);
+  }
+
+  &__title {
+    @include adaptiveValueModified("margin-bottom", 10, 10, 320, 10, 767, 35, 1330, 84, 1600, 84);
+
+    @include se {
+      max-width: 225px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include xl {
+      display: grid;
+      justify-content: space-around;
+      grid-template-columns: repeat(2, minmax(235px, 1fr));
+      gap: 90px;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      background-position: top right;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &:nth-child(2n) {
+      .investors__caption {
+        @include land {
+          margin-right: 0;
+        }
+      }
+
+      .investors__img {
+        @include land {
+          margin-right: 10px;
+        }
+      }
+
+      @include mobile {
+        flex-direction: row-reverse;
+      }
+    }
+
+    @include xl {
+      align-items: center;
+    }
+
+    @include mobile {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+
+    &__img {
+      object-fit: contain;
+    }
+
+  &__caption {
+    @include adaptiveValueModified("--fz", 10, 14, 320, 14, 767, 18, 1600, 18);
+    @include line-clamp-new((var(--fz)), 1.2, 3, 500);
+
+    margin-bottom: 18px;
+    max-width: 186px;
+
+    @include xl {
+      margin-bottom: 0;
+    }
+
+    @include land {
+      margin-right: 10px;
+      max-width: 150px;
+    }
+
+    @include se {
+      max-width: 119px;
+    }
+  }
+
+  &__img {
+    @include land {
+      @include adaptiveValue("max-width", 175, 95, 576, 320);
+      @include adaptiveValue("max-height", 266, 144, 576, 320);
+    }
+  }
+}

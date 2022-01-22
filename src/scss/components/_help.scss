@@ -1,0 +1,113 @@
+.help {
+  &__title {
+    @include adaptiveValueModified("margin-bottom", 10, 10, 576, 10, 577, 25, 767, 25, 1024, 46, 1600, 46);
+    @include adaptiveValueModified("max-width", 10, 130, 320, 130, 576, 160, 767, 180, 1024, 350, 1600, 350);
+  }
+
+  &__info {
+    @include land {
+      display: contents;
+    }
+  }
+
+  &__wrapper {
+    @include adaptiveValueModified("padding-top", 10, 18, 320, 18, 767, 30, 1200, 45, 1330, 70, 1600, 70);
+    @include adaptiveValueModified("padding-bottom", 10, 18, 320, 18, 767, 30, 1200, 45, 1330, 70, 1600, 70);
+
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    overflow: hidden;
+
+    @include xl {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__descr {
+    z-index: 2;
+    max-width: 435px;
+
+    @include xl {
+      margin-bottom: 54px;
+    }
+
+    @include tablet {
+      max-width: 257px;
+    }
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+
+    @include land {
+      order: 1;
+      margin-bottom: 18px;
+      max-width: none;
+    }
+  }
+
+  &__link {
+    z-index: 2;
+    text-align: center;
+    padding: 15px 38px;
+
+    @include land {
+      order: 2;
+      margin: 0 auto;
+    }
+
+    @include se {
+      width: 100%;
+    }
+  }
+
+  &__img-box {
+    @include land {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__bg-img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 461px;
+    object-fit: cover;
+    transform: translateX(-19.5%);
+
+    @include bigtablet {
+      width: 370px;
+    }
+
+    @include xl {
+      position: absolute;
+      left: auto;
+      right: 0;
+      top: auto;
+      bottom: 0;
+      width: 421px;
+      transform: translateX(-5%);
+    }
+
+    @include tablet {
+      width: auto;
+    }
+
+    @include mobile {
+      transform: translateX(-5%) scale(min(1, 0.55));
+      transform-origin: bottom right;
+    }
+
+    @include land {
+      position: relative;
+      transform: translateX(0);
+    }
+
+    @include se {
+      left: -30px;
+    }
+  }
+}

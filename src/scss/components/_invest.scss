@@ -1,0 +1,242 @@
+.invest {
+  margin-bottom: 53px;
+
+  &__container {
+    @include tablet {
+      overflow: hidden;
+      margin-top: -33px;
+      padding-top: 33px;
+    }
+  }
+
+  &__top {
+    position: relative;
+    padding: 72px 83px 323px 79px;
+
+    @include tablet {
+      padding: 39px 39px 411px 48px;
+    }
+
+    @include mobile {
+      overflow: hidden;
+      margin-bottom: 15px;
+      padding: 20px 21px 23px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: 45px;
+    top: -195px;
+    z-index: 1;
+    padding-bottom: 100%;
+    width: 100%;
+    height: 0;
+    max-width: 1042px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+
+    @include bigtablet {
+      top: -120px;
+      width: 75%;
+    }
+
+    @include xl {
+      top: -70px;
+    }
+
+    @include tablet {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include mobile {
+      right: 0;
+      top: 60px;
+      margin: 0 auto;
+      width: 500px;
+      height: 485px;
+    }
+
+    @include land {
+      height: 435px;
+      max-width: 500px;
+    }
+
+    @include se {
+      height: 354px;
+      max-width: 400px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 59px;
+    max-width: 343px;
+    font-weight: 700;
+    font-size: 40px;
+
+    @include tablet {
+      margin-bottom: 41px;
+      font-size: 30px;
+    }
+
+    @include land {
+      max-width: 220px;
+      font-size: 26px;
+    }
+
+    @include se {
+      max-width: 155px;
+      font-size: 18px;
+    }
+  }
+
+  &__profitability {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 35px;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 0.9;
+    color: var(--color-alizarin-crimson);
+
+    span {
+      display: block;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--color-black);
+
+      @include se {
+        font-size: 16px;
+      }
+    }
+
+    @include mobile {
+      margin-bottom: 259px;
+    }
+
+    @include land {
+      font-size: 50px;
+    }
+
+    @include se {
+      font-size: 40px;
+    }
+  }
+
+  &__attracted {
+    position: absolute;
+    right: 33px;
+    top: 33px;
+    z-index: 2;
+    border-radius: var(--bord-rad);
+    padding: 35px 42px 37px;
+    max-width: 249px;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-white);
+    background-color: var(--color-alizarin-crimson);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 41px;
+      top: 100%;
+      border: solid transparent;
+      border-width: 0 35px 47px 0;
+      border-color: transparent var(--color-alizarin-crimson) transparent transparent;
+
+      @include tablet {
+        left: 50%;
+      }
+
+      @include mobile {
+        left: 41px;
+        border-width: 0 20px 30px 0;
+      }
+
+      @include land {
+        left: auto;
+        right: 30px;
+      }
+    }
+
+    span {
+      display: block;
+      font-weight: 700;
+    }
+
+    @include tablet {
+      right: 46px;
+      top: 45px;
+    }
+
+    @include mobile {
+      top: 90px;
+      padding: 21px 16px 24px 20px;
+      max-width: 155px;
+      max-height: 97px;
+      font-size: 12px;
+    }
+
+    @include land {
+      left: 22px;
+      right: auto;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      padding: 21px 16px 24px 20px;
+      max-width: 155px;
+      max-height: 97px;
+      font-size: 12px;
+      transform: translateY(10%);
+    }
+
+    @include se {
+      transform: translateY(-20%);
+    }
+  }
+
+  &__btn {
+    display: none;
+
+    @include mobile {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: 100%;
+    }
+
+    @include se {
+      font-size: 12px;
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    z-index: 1;
+    margin-top: -146px;
+
+    @include tablet {
+      margin-top: -174px;
+    }
+
+    @include mobile {
+      margin-top: 0;
+    }
+  }
+
+  @include tablet {
+    position: relative;
+    margin-bottom: 45px;
+  }
+
+  @include se {
+    margin-bottom: 38px;
+  }
+}

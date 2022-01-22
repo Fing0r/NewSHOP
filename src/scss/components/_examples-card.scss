@@ -1,0 +1,292 @@
+.examples-card {
+  &__box {
+    max-width: 568px;
+
+    @include land {
+      max-width: 500px;
+    }
+  }
+
+  &__top {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 23px;
+    border-radius: var(--bord-rad);
+    width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: 7px 7px 3px rgba(var(--color-black-rgb), 0.25);
+    }
+
+    &:active {
+      box-shadow: 2px 2px 3px rgba(var(--color-black-rgb), 0.25);
+    }
+
+    @include land {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__img {
+    border-radius: var(--bord-rad);
+
+    @include mobile {
+      border-radius: var(--bord-rad-min);
+    }
+
+    &--min {
+      z-index: 3;
+      margin-right: -45px;
+
+      @include xl {
+        margin-right: -70px;
+        width: 50%;
+        height: auto;
+      }
+
+      @include tablet {
+        margin-right: -45px;
+      }
+
+      @include mobile {
+        margin-right: -70px;
+        width: 50%;
+        height: auto;
+      }
+    }
+
+    &--big {
+      z-index: 4;
+
+      @include xl {
+        height: auto;
+      }
+
+      @include mobile {
+        height: auto;
+      }
+    }
+  }
+
+  &__big-box {
+    position: relative;
+    z-index: 4;
+    width: 64%;
+    height: 100%;
+  }
+
+  &__profit {
+    @include se {}
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+    border-radius: 30px 30px 30px 0;
+    padding: 24px 27px;
+    width: 100%;
+    max-width: 150px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--color-white);
+    background-color: var(--color-alizarin-crimson);
+
+    @include land {
+      border-radius: 10px 10px 10px 0;
+      padding: 12px;
+      width: 34%;
+      width: min-content;
+      height: auto;
+    }
+  }
+
+  &__percent {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 36px;
+
+    @include land {
+      font-size: 20px;
+    }
+
+    @include se {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__during {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+
+    @include land {
+      font-size: 9px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 15px;
+
+    @include land {
+      display: block;
+      margin-bottom: 11px;
+      font-size: 12px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    margin-right: auto;
+    transition: color 0.3s, opacity 0.3s;
+
+    &:hover {
+      color: var(--color-alizarin-crimson);
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+
+    @include land {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 16px;
+    }
+  }
+
+  &__title {
+    font-size: 22px;
+
+    @include mobile {
+      font-size: 20px;
+    }
+
+    @include land {
+      font-size: 16px;
+    }
+  }
+
+  &__rooms {
+    display: inline-block;
+    margin-right: 17px;
+  }
+
+  &__square {
+    display: inline-block;
+
+    sup {
+      font-size: 10px;
+    }
+  }
+
+  &__offer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 9px;
+        width: 103px;
+        height: 16px;
+        background-image: url("/img/arrow.svg");
+        background-repeat: no-repeat;
+        transform: translateX(-60%);
+
+        @include xl {
+          width: 30px;
+          background-position: right;
+        }
+
+        @include tablet {
+          width: 103px;
+        }
+
+        @include mobile {
+          width: 30px;
+        }
+
+        @include land {
+          height: 12px;
+          transform: translateX(-50%);
+        }
+
+        @include se {
+          width: 8px;
+          height: 12px;
+          background-image: url("/img/arrow-min.svg");
+        }
+      }
+    }
+  }
+
+  &__price {
+    display: block;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--color-alizarin-crimson);
+
+    @include mobile {
+      font-size: 20px;
+    }
+
+    @include land {
+      font-size: 18px;
+    }
+
+    @include se {
+      font-size: 14px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+  }
+
+  &__area {
+    display: inline-block;
+    margin-right: 30px;
+    color: var(--color-gray);
+
+    @include mobile {
+      margin-right: 20px;
+      font-size: 14px;
+    }
+
+    @include land {
+      display: block;
+      margin-right: 0;
+    }
+
+    @include se {
+      display: block;
+      margin-right: 0;
+      font-size: 11px;
+    }
+  }
+
+  &__year {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 18px;
+
+    @include mobile {
+      font-size: 16px;
+    }
+
+    @include se {
+      font-size: 14px;
+    }
+  }
+}

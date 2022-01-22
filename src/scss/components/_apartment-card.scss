@@ -1,0 +1,130 @@
+.apartment-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 326px;
+
+  &__img-box {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 36px;
+    border-radius: var(--bord-rad);
+    padding-bottom: 71%;
+    filter: drop-shadow(0 4px 47px rgba(var(--color-black-rgb), 0.1));
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: 7px 7px 3px rgba(var(--color-black-rgb), 0.25);
+    }
+
+    &:active {
+      box-shadow: 2px 2px 3px rgba(var(--color-black-rgb), 0.25);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__box {
+    flex: 1 1 auto;
+    margin-bottom: 52px;
+    padding-right: 4px;
+    padding-left: 4px;
+
+    @include tablet {
+      padding: 0;
+    }
+
+    @include mobile {
+      margin-bottom: 23px;
+    }
+  }
+
+  &__link {
+    display: block;
+    transition:
+      color 0.3s,
+      opacity 0.3s;
+
+    &:hover {
+      color: var(--color-alizarin-crimson);
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  &__title {
+    @include line-clamp(22, 1.2, 2);
+
+    margin-bottom: 23px;
+    font-weight: 700;
+
+    @include se {
+      @include line-clamp(18, 1.2, 2);
+
+      margin-bottom: 8px;
+    }
+  }
+
+  &__info {
+    position: relative;
+    padding-left: 26px;
+  }
+
+  &__strip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 11px;
+    height: 43px;
+    background-color: var(--color-dodger-blue);
+
+    span {
+      display: block;
+      width: 100%;
+      background-color: var(--color-alizarin-crimson);
+    }
+  }
+
+  &__percent {
+    display: block;
+    margin-bottom: 9px;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--color-alizarin-crimson);
+  }
+
+  &__profit {
+    display: block;
+    font-size: 12px;
+    color: var(--color-gray);
+  }
+
+  &__pool {
+    margin-left: -14px;
+    border-radius: var(--bord-rad-min);
+    padding: 6px 12px 10px 14px;
+    color: #271e2c;
+    transition: background-color 0.3s, opacity 0.3s;
+
+    &:hover {
+      background-color: var(--color-wild);
+      transition: background-color 0.3s;
+    }
+
+    &:active {
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+  }
+}

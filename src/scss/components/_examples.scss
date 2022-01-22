@@ -1,0 +1,119 @@
+.examples {
+  &__container {
+    position: relative;
+  }
+
+  &__wrapper {
+    @include adaptiveValueModified("padding-top", 10, 18, 320, 18, 576, 30, 1024, 41, 1330, 64, 1600, 64);
+    @include adaptiveValueModified("padding-bottom", 10, 150, 320, 150, 576, 200, 1024, 234, 1330, 216, 1600, 216);
+
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      max-width: 651px;
+      background-image: url("/img/examples.png");
+      background-position: bottom;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translateX(3%);
+      pointer-events: none;
+
+      @include tablet {
+        width: 70%;
+        height: 386px;
+        background-position: bottom;
+        transform: translateX(5%);
+      }
+
+      @include mobile {
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-position: bottom left;
+        transform: translateX(30%);
+      }
+    }
+  }
+
+  &__slider {
+    position: relative;
+    overflow: hidden;
+    margin-top: -140px;
+    @include adaptiveValueModified("--padding", 10, 15, 320, 15, 576, 30, 1024, 30, 1199, 40, 1200, 0, 1600, 0);
+    padding: 5px var(--padding) 0;
+
+    @include land {
+      margin-top: -110px;
+    }
+
+    @include se {
+      margin-top: -100px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    width: 100%;
+  }
+
+  &__slide {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    // transition-property: transform;
+
+    &--active,
+    &--active+li,
+      {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    right: 50px;
+    top: 62px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+
+    @include bigtablet {
+      right: 60px;
+    }
+
+    @include tablet {
+      right: 80px;
+      top: 44px;
+    }
+
+    @include mobile {
+      position: static;
+      justify-content: space-between;
+      margin-top: 35px;
+      padding: 0 21px;
+      max-width: 100%;
+    }
+  }
+}
+

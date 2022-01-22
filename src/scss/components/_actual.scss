@@ -1,0 +1,28 @@
+.actual {
+  &__title {
+    @include adaptiveValueModified("margin-bottom", 10, 28, 320, 28, 767, 57, 1400, 80, 1600, 80);
+    @include adaptiveValueModified("max-width", 10, 215, 320, 215, 1024, 430, 1600, 430);
+  }
+
+  &__list {
+    @include adaptiveValue("gap", 70, 60, 1330, 1200);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+
+    @include tablet {
+      gap: 55px 40px;
+    }
+
+    @include mobile {
+      @include adaptiveValue("gap", 40, 33, 767, 320);
+
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+  }
+}

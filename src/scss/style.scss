@@ -1,0 +1,31 @@
+// базовые подключения
+@import 'mixin';
+@import 'fonts';
+@import 'vars';
+@import 'libs';
+@import 'reset';
+@import 'global';
+
+// подключения компонентов страницы
+@import "./components/header";
+@import "./components/footer";
+
+@import "./components/social";
+@import "./components/modals";
+
+@import "./components/invest";
+@import "./components/income";
+@import "./components/subscribe";
+@import "./components/dynamics";
+@import "./components/examples";
+@import "./components/examples-card";
+@import "./components/download";
+@import "./components/how";
+@import "./components/testimonials";
+@import "./components/specialists";
+@import "./components/actual";
+@import "./components/apartment-card";
+@import "./components/help";
+@import "./components/guarantees";
+@import "./components/survey";
+@import "./components/investors";

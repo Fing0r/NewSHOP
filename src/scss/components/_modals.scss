@@ -1,0 +1,321 @@
+.modal {
+  --transition-time: 0.3s;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-time), visibility var(--transition-time);
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+
+    @include land {
+      content: none;
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: none;
+    vertical-align: middle;
+    margin: 50px auto;
+    border-radius: var(--bord-rad);
+    padding: 60px 136px 85px 79px;
+    width: 676px;
+    text-align: left;
+    background-color: #fff;
+    cursor: default;
+
+    @include mobile {
+      padding: 60px calc((90% - 315px) / 2) 85px;
+      width: 90%;
+    }
+
+    @include land {
+      margin: auto;
+      border-radius: 0;
+      padding: 17px;
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+
+  &__container.modal-open {
+    display: inline-block;
+
+    @include land {
+      display: flex;
+      justify-content: center;
+    }
+
+    @include se {
+      flex-direction: column;
+    }
+  }
+
+  @include land {
+    bottom: auto;
+  }
+}
+
+.modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--transition-time), visibility var(--transition-time);
+}
+
+.modal-close {
+  position: absolute;
+  right: 43px;
+  top: 40px;
+  z-index: 1000;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  background-image: url("/img/close.svg");
+  background-repeat: no-repeat;
+  background-color: transparent;
+
+  @include land {
+    right: 17px;
+    top: 17px;
+  }
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity var(--transition-time);
+}
+
+.fade.animate-open {
+  opacity: 1;
+  transition: opacity var(--transition-time);
+}
+
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: opacity var(--transition-time), transform var(--transition-time);
+}
+
+.fadeInUp.animate-open {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--transition-time), transform var(--transition-time);
+}
+
+.content {
+  min-height: 200vh;
+}
+
+.disable-scroll {
+  position: relative;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+.politics {
+  overflow: hidden;
+
+  &__title {
+    @include adaptiveValueModified("max-width", 10, 200, 320, 200, 1024, 350, 1600, 350);
+    @include adaptiveValueModified("font-size", 10, 16, 320, 16, 767, 30, 1600, 30);
+
+    margin-bottom: 75px;
+    line-height: 1;
+
+    @include land {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__descr {
+    max-height: 300px;
+    font-family: "Muller", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    color: var(--color-daintree);
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+
+    @include land {
+      max-height: calc(100vh - (17px * 2) - var(--element-offset));
+    }
+  }
+
+  &.modal-open {
+    @include land {
+      display: inline-block;
+    }
+
+    @include se {
+      display: flex;
+    }
+  }
+}
+
+.back-call {
+  padding-bottom: 63px;
+  background-image: url("/img/back-call.png");
+  background-position: right bottom 72px;
+  background-repeat: no-repeat;
+  background-color: var(--color-pattens-blue);
+
+  &__content {
+    max-width: 315px;
+
+    @include land {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  &__checkbox {
+    @include xl {
+      pointer-events: none;
+    }
+  }
+
+  &__title {
+    @include adaptiveValueModified("max-width", 10, 160, 320, 160, 767, 300, 1600, 300);
+    @include adaptiveValueModified("font-size", 10, 16, 320, 16, 767, 30, 1600, 30);
+
+    margin-bottom: 23px;
+    line-height: 1;
+  }
+
+  &__text {
+    display: block;
+    margin-bottom: 45px;
+    font-size: 15px;
+    line-height: 1;
+    color: #6b6e72;
+
+    @include se {
+      margin-bottom: 23px;
+      font-size: 14px;
+    }
+  }
+
+  &__box {
+    margin-bottom: 127px;
+
+    @include mobile {
+      margin-bottom: 15px;
+    }
+
+    @include land {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__label {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 19px;
+
+      @include se {
+        margin-bottom: 9px;
+      }
+    }
+  }
+
+  &__form {
+    margin-bottom: auto;
+  }
+
+  &__input {
+    border-radius: var(--bord-rad-min);
+    padding: 16px 18px;
+    width: 100%;
+    max-width: 315px;
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 20px;
+      color: #747474;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 37px;
+    width: 100%;
+
+    @include se {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__descr {
+    max-width: 224px;
+    font-size: 12px;
+    line-height: 1.1;
+    color: #6b6e72;
+  }
+
+  &__politics {
+    display: inline-block;
+    padding: 0;
+    text-decoration: underline;
+    color: var(--color-dodger-blue);
+    background-color: transparent;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--color-alizarin-crimson);
+
+    }
+  }
+
+  @include mobile {
+    padding-bottom: 240px;
+    background-image: url("/img/back-call-mobile.png");
+    background-position: center bottom;
+  }
+
+  @include land {
+    padding-bottom: 17px;
+    background-position: left bottom -40px;
+  }
+
+  @media (min-height: 631px) and (max-width: 375px) {
+    background-position: left bottom;
+  }
+
+  @media (max-height: 630px) and (max-width: 375px) {
+    background-position: left bottom -40px;
+  }
+
+  @media (max-height: 550px) and (max-width: 375px) {
+    background-image: none;
+  }
+}
+
+.custom-checkbox {
+  @include custom-checkbox;
+}

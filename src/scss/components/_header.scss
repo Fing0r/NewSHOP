@@ -1,0 +1,80 @@
+.header {
+  padding: 38px 0 118px;
+
+  &__nav {
+    display: flex;
+
+    @include mobile {
+      flex-wrap: wrap;
+      gap: 5px 9px;
+    }
+
+    @include land {
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    z-index: 2;
+    margin-right: 52px;
+
+    @include tablet {
+      margin-right: 51px;
+    }
+
+    @include mobile {
+      margin-right: 30px;
+    }
+
+    @include land {
+      margin-right: 0;
+    }
+  }
+
+  &__free-call {
+    z-index: 2;
+    margin-right: auto;
+
+    @include land {
+      order: 1;
+    }
+  }
+
+  &__order {
+    z-index: 2;
+    margin-right: 35px;
+
+    @include tablet {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+
+    @include land {
+      margin-bottom: 0;
+    }
+  }
+
+  &__social {
+    @include mobile {
+      margin-left: 6px;
+    }
+  }
+
+  @include tablet {
+    padding-top: 51px;
+    padding-bottom: 68px;
+  }
+  @include mobile {
+    padding-top: 25px;
+    padding-bottom: 40px;
+  }
+  @include land {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+  @include se {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+}

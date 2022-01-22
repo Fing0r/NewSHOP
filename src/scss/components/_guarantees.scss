@@ -1,0 +1,221 @@
+.guarantees {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 10px;
+    padding-top: 8px;
+
+    @include xl {
+      margin-right: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: auto;
+
+    @include xl {
+      margin-bottom: 49px;
+      max-width: calc(350px + 83px + 79px);
+    }
+
+    @include tablet {
+      padding: 0 49px;
+      max-width: calc(230px + (49px * 2));
+    }
+
+    @include mobile {
+      margin-bottom: 29px;
+      padding: 0 35px;
+      max-width: calc(250px + (35px * 2));
+    }
+
+    @include land {
+      padding: 0 22px;
+      max-width: calc(235px + (22px * 2));
+    }
+  }
+
+  &__box {
+    @include adaptiveValueModified("--padding", 10, 22, 320, 22, 767, 35, 1022, 49, 1023, 49);
+
+    @include tablet {
+      padding: 0 var(--padding);
+    }
+  }
+
+  &__descr {
+    @include adaptiveValueModified("margin-bottom", 10, 22, 320, 22, 767, 26, 1024, 39, 1200, 60, 1600, 60);
+
+    max-width: 321px;
+
+    @include xl {
+      max-width: 100%;
+    }
+  }
+
+  &__btn {
+    padding: 14px 64px;
+    @include se {
+      padding: 14px 30px;
+      width: 100%;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    height: 628px;
+    max-width: 674px;
+    gap: 23px;
+
+    @include xl {
+      align-self: center;
+      margin-bottom: 54px;
+    }
+
+    @include mobile {
+      flex-flow: column;
+      align-items: center;
+      margin-bottom: 29px;
+      height: auto;
+      gap: 13px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--bord-rad);
+    padding: 30px 35px 24px;
+    width: 100%;
+    height: 100%;
+    max-width: 325px;
+    color: var(--color-white);
+    background-color: var(--color-dodger-blue);
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    @include mobile {
+      padding: 19px 25px;
+    }
+
+    &--mortgage {
+      height: 371px;
+
+      &::after {
+        right: 27px;
+        top: 35px;
+        width: 143px;
+        height: 214px;
+        background-image: url("/img/mortgage.png");
+
+        @include mobile {
+          right: 12px;
+          top: 15px;
+          width: 106px;
+          height: 160px;
+        }
+      }
+
+      @include mobile {
+        height: 302px;
+      }
+    }
+
+    &--selection {
+      height: 234px;
+
+      &::after {
+        right: 22px;
+        top: 11px;
+        width: 98px;
+        height: 122px;
+        background-image: url("/img/selection.png");
+
+        @include mobile {
+          right: 30px;
+          top: 15px;
+        }
+      }
+
+      @include mobile {
+        height: 254px;
+      }
+    }
+
+    &--objects {
+      height: 281px;
+
+      &::after {
+        right: 30px;
+        top: 17px;
+        width: 89px;
+        height: 151px;
+        background-image: url("/img/objects.png");
+
+        @include mobile {
+          top: 15px;
+        }
+      }
+
+      @include mobile {
+        height: 282px;
+      }
+    }
+
+    &--price {
+      height: 324px;
+
+      &::after {
+        right: 27px;
+        top: 41px;
+        width: 168px;
+        height: 168px;
+        background-image: url("/img/price.png");
+
+        @include mobile {
+          top: 26px;
+          width: 96px;
+          height: 96px;
+        }
+      }
+
+      @include mobile {
+        height: 251px;
+      }
+    }
+  }
+
+  &__caption {
+    z-index: 2;
+    margin-bottom: auto;
+    max-width: 144px;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  &__text {
+    z-index: 2;
+    font-size: 13px;
+    color: inherit;
+  }
+}

@@ -1,0 +1,48 @@
+<section class="survey section" >
+  <div class="container">
+    <form class="survey__form inner-container inner-container--bg-dodger" action="#" data-aos="zoom-in">
+      <div class="survey__top">
+        <h2 class="title title--white survey__title">Пройдите опрос</h2>
+        <button class="survey__btn btn" type="submit" data-da=".survey__bottom,1024,3" tabindex="0">Отправить</button>
+      </div>
+      <div class="survey__bottom">
+        <div class="survey__item survey__item--capital">
+          <h3 class="survey__caption">
+            Сколько планируете инвестировать в недвижимость Краснодара
+          </h3>
+          <label class="survey__label">
+            <input class="survey__field" id="input-format" name="capital" type="text" value="500000" minlength="6"
+              maxlength="11" aria-placeholder="сумма инвестиций в рублях">
+            <span>₽</span>
+          </label>
+          <div class="survey__range" id="slider-format">
+          </div>
+        </div>
+        <div class="survey__item">
+          <h3 class="survey__caption">
+            Укажите вашу инвестиционную стратегию
+          </h3>
+          <select class="survey__select" id="find-strategy" name="strategy" aria-labeledby="выберите стратегию" aria-labelledby="123" itemid="123">
+            <option selected value="выберите страт">выберите страт</option>
+            <option value="выберите стратег">выберите стратег</option>
+            <option value="выберите стратеги">выберите стратеги</option>
+            <option value="выберите стратегию">выберите стратегию</option>
+            <option value="выберите стратегию">выберите стратегию</option>
+          </select>
+        </div>
+        <div class="survey__item survey__item--duration">
+          <h3 class="survey__caption">
+            На какой срок планируете инвестиции
+          </h3>
+          <label class="survey__label">
+            <input class="survey__field" id="input-year" name="duration" type="text" aria-placeholder="срок инвестиций"
+              value="0" minlength="1" maxlength="6">
+            <span></span>
+          </label>
+          <div class="survey__range" id="slider-year">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

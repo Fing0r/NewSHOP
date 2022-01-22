@@ -1,0 +1,50 @@
+@import "./mixin/breakpoint";
+@import "./mixin/burger";
+@import "./mixin/checkbox";
+@import "./mixin/font-face";
+@import "./mixin/mini";
+@import "./mixin/line-clamp";
+@import "./mixin/mask";
+@import "./mixin/adap";
+
+@mixin adaptiveValue($property, $maxSize, $minSize, $maxWidth, $minWidth, $num: 0) {
+  $minSizeRem: calc($minSize / 16) + rem;
+  $maxSizeRem: calc($maxSize / 16) + rem;
+  $slope: calc(($maxSize - $minSize) / ($maxWidth - $minWidth));
+  $yIntersection: calc((-1 * $minWidth * $slope + $minSize) / 16) + rem;
+  $slopeVw: ($slope * 100) + vw;
+  $flyValue: calc($yIntersection + $slopeVw);
+
+  @if (($minSize > $maxWidth) and ($num==0)) {
+    #{$property}: clamp($maxSizeRem, $flyValue, $minSizeRem);
+  }
+
+  @if (($minSize < $maxWidth) and ($num==0)) {
+    #{$property}: clamp($minSizeRem, $flyValue, $maxSizeRem);
+  }
+
+  @if (($minSize > $maxWidth) and ($num !=0)) {
+    #{$property}: calc(clamp($maxSizeRem, $flyValue, $minSizeRem) * $num)
+  }
+
+  @if ($minSize < $maxWidth and ($num !=0)) {
+    #{$property}: calc(clamp($minSizeRem, $flyValue, $maxSizeRem) * $num)
+  }
+}
+
+// @mixin adaptiveValue2($property, $maxSize, $minSize, $maxWidth, $minWidth, $num) {
+//   $minSizeRem: calc(($minSize / 16))+rem;
+//   $maxSizeRem: calc(($maxSize / 16))+rem;
+//   $slope: calc(($maxSize - $minSize) / ($maxWidth - $minWidth));
+//   $yIntersection: calc((-1 * $minWidth * $slope + $minSize) / 16) + rem;
+//   $slopeVw: ($slope * 100) + vw;
+//   $flyValue: calc($yIntersection + $slopeVw);
+
+//   @if (($minSize > $maxWidth) and $num=0) {
+//     #{$property}: calc(clamp($maxSizeRem, $flyValue, $minSizeRem) * $num)
+//   }
+
+//   @if ($minSize < $maxWidth) {
+//     #{$property}: calc(clamp($minSizeRem, $flyValue, $maxSizeRem) * $num)
+//   }
+// }

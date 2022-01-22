@@ -1,0 +1,199 @@
+.how {
+  @include adaptiveValueModified("padding-top", 10, 15, 320, 15, 1023, 145, 1024, 175, 1600, 175);
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    @include adaptiveValueModified("margin-bottom", 10, 19, 320, 19, 1024, 67, 1330, 67);
+
+    @include bigtablet {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__box {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-radius: var(--bord-rad);
+    padding: 80px 70px;
+    width: 100%;
+    max-width: 643px;
+
+
+    @include tablet {
+      @include adaptiveValue('padding', 70, 60, 1024, 768);
+      width: 100%;
+      max-width: none;
+    }
+
+    @include mobile {
+      @include adaptiveValue('padding', 60, 22, 768, 320);
+    }
+
+    @include land {
+      min-height: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include land {
+        left: auto;
+        right: 0;
+        transform: scale(-1, 1);
+      }
+    }
+
+    &--profit {
+      margin-right: 10px;
+      background-color: var(--color-dodger-blue);
+
+      &::after {
+        top: -175px;
+        height: calc(293px * 1.87);
+        width: 293px;
+        background-image: url("/img/profit.svg");
+
+        @include tablet {
+          @include adaptiveValue('max-width', 250, 117, 1024, 320);
+          @include adaptiveValue('max-height', 250, 117, 1024, 320, 1.87);
+          @include adaptiveValue('top', 145, 15, 1024, 320, -1);
+        }
+      }
+
+      @include bigtablet {
+        margin-right: 0;
+        @include adaptiveValue('margin-bottom', 13, 8, 1024, 320);
+      }
+
+      @include land {
+        left: auto;
+      }
+    }
+
+    &--risk {
+      top: 114px;
+      overflow: hidden;
+      background-color: #ff5f5f;
+
+      &::after {
+        --img-width: 343px;
+
+        height: calc(var(--img-width) * 1.15);
+        width: var(--img-width);
+        left: -27px;
+        top: -30px;
+        background-image: url("/img/risk.svg");
+        background-size: cover;
+
+        @include tablet {
+          @include adaptiveValue('max-width', 293, 159, 1024, 320);
+          @include adaptiveValue('max-height', 293, 159, 1024, 320, 1.15);
+        }
+
+        @include land {
+          left: auto;
+          top: -13px;
+        }
+      }
+
+      @include bigtablet {
+        top: 0;
+      }
+    }
+  }
+
+  &__title {
+    max-width: 250px;
+    z-index: 2;
+    font-size: 30px;
+
+    @include tablet {
+      @include adaptiveValue('max-width', 250, 170, 1024, 320);
+      @include adaptiveValue('font-size', 25, 16, 1024, 320);
+    }
+
+    @include land {
+      margin-bottom: 102px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    @include land {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      z-index: 2;
+      grid-gap: 20px;
+    }
+  }
+
+  &__item {
+    max-width: 172px;
+    font-weight: 500;
+    @include adaptiveValue('font-size', 18, 12, 1024, 320);
+    @include adaptiveValue('max-width', 172, 120, 1024, 320);
+    color: var(--color-white);
+
+    &:not(:last-child) {
+      margin-bottom: 81px;
+
+      @include tablet {
+        @include adaptiveValue('margin-bottom', 60, 40, 1024, 576);
+      }
+
+      @include land {
+        margin-bottom: 0px;
+      }
+    }
+
+    &:nth-child(2n + 1) {
+      @include land {
+        order: 1;
+      }
+    }
+
+    &:nth-child(2n) {
+      @include land {
+        order: 3;
+      }
+    }
+
+    &:nth-child(-n + 2) {
+      break-before: flex;
+      break-before: always;
+    }
+  }
+
+  &__descr {
+    display: block;
+  }
+
+  &__bottom {
+    padding-left: 80px;
+
+    @include bigtablet {
+      padding-left: 0;
+      text-align: center;
+    }
+  }
+
+  &__btn {
+    padding-right: 62px;
+    padding-left: 62px;
+  }
+}

@@ -57,11 +57,12 @@
     }
 
     @include mobile {
-      gap: 60px;
+      display: grid;
+      grid-gap: 60px;
     }
 
     @include land {
-      gap: 45px;
+      grid-gap: 45px;
     }
   }
 
@@ -201,9 +202,13 @@
     &--dropdown .choices__item {
       padding: 4px 22px;
       font-size: 16px;
+      @include bigtablet {
+      padding: 8px 22px;
+      }
 
       @include land {
         font-size: 12px;
+        padding: 10px 22px;
       }
     }
   }

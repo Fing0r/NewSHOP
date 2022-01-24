@@ -11,7 +11,6 @@ body {
 html,
 body {
   height: 100%;
-  scroll-behavior: smooth;
 }
 
 html {
@@ -119,12 +118,19 @@ main {
 }
 
 .section {
-  @include adaptiveValueModified("margin-bottom", 10, 50, 320, 50, 767, 85, 1330, 140, 1600, 140);
+  // @include adaptiveValueModified("margin-bottom", 10, 50, 320, 50, 767, 85, 1330, 140, 1600, 140);
+  @include adaptiveValue('margin-bottom', 140, 85, 1330, 767, 2);
+  @include adaptiveValue('margin-bottom', 85, 50, 767, 320, 3);
 }
 
 .inner-container {
-  @include adaptiveValueModified("padding-right", 10, 22, 576, 22, 767, 35, 1024, 49, 1330, 80, 1600, 80);
-  @include adaptiveValueModified("padding-left", 10, 22, 576, 22, 767, 35, 1024, 49, 1330, 80, 1600, 80);
+  // @include adaptiveValueModified("padding-right", 10, 22, 576, 22, 767, 35, 1024, 49, 1330, 80, 1600, 80);
+  // @include adaptiveValueModified("padding-left", 10, 22, 576, 22, 767, 35, 1024, 49, 1330, 80, 1600, 80);
+
+  @include adaptiveValue('padding-right', 80, 35, 1330, 767, 2);
+  @include adaptiveValue('padding-left', 80, 35, 1330, 767, 2);
+  @include adaptiveValue('padding-right', 35, 22, 767, 320, 3);
+  @include adaptiveValue('padding-left', 35, 22, 767, 320, 3);
 
   &--bg {
     border-radius: var(--bord-rad);
@@ -143,7 +149,9 @@ main {
 
 .title {
   font-weight: 700;
-  @include adaptiveValueModified("font-size", 10, 16, 320, 16, 767, 25, 1024, 30, 1600, 30);
+  // @include adaptiveValueModified("font-size", 10, 16, 320, 16, 767, 25, 1024, 30, 1600, 30);
+  @include adaptiveValue('font-size', 30, 25, 1024, 767, 2);
+  @include adaptiveValue('font-size', 25, 16, 767, 320, 3);
 
   position: relative;
 
@@ -152,7 +160,11 @@ main {
   }
 
   &--container {
-    @include adaptiveValueModified("max-width", 10, 235, 320, 235, 767, 280, 1024, 350, 1600, 350);
+    // @include adaptiveValueModified("max-width", 10, 235, 320, 235, 767, 280, 1024, 350, 1600, 350);
+
+    @include adaptiveValue('max-width', 350, 280, 1024, 767, 2);
+    @include adaptiveValue('max-width', 280, 235, 767, 320, 3);
+
     z-index: 2;
   }
 }
@@ -276,5 +288,50 @@ main {
 
   &__current {
     color: var(--color-alizarin-crimson);
+  }
+}
+
+
+.to-top {
+  position: fixed;
+  right: calc((100% - 1400px) / 2);
+  bottom: 80px;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  box-shadow: 0px 0px 3px rgba(150, 150, 150, 1);
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    background: var(--color-dodger-blue);
+    transition: background-color 0.3s ease-in-out;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      object-fit: cover;
+    }
+
+    &:hover {
+      background-color: var(--color-pattens-blue);
+    }
+  }
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include bigtablet {
+    right: 20px;
+    bottom: 20px;
   }
 }

@@ -10,6 +10,8 @@
   }
 
   &__top {
+    border-radius: var(--bord-rad);
+    background-color: var(--color-pattens-blue);
     position: relative;
     padding: 72px 83px 323px 79px;
 

@@ -1,6 +1,10 @@
 .testimonials {
-  @include adaptiveValueModified("margin-bottom", 10, 103, 320, 103, 1024, 130, 1330, 166, 1600, 166);
-  @include adaptiveValueModified("padding-top", 1024, 0, 1025, 58, 1200, 69, 1330, 77, 1600, 77);
+  // @include adaptiveValueModified("margin-bottom", 10, 103, 320, 103, 1024, 130, 1330, 166, 1600, 166);
+  // @include adaptiveValueModified("padding-top", 1024, 0, 1025, 58, 1200, 69, 1330, 77, 1600, 77);
+
+  @include adaptiveValue('margin-bottom', 166, 130, 1330, 1024, 2);
+  @include adaptiveValue('margin-bottom', 130, 103, 1024, 320, 3);
+  @include adaptiveValue('padding-top', 77, 58, 1200, 1024, 2);
 
   &__container {
     position: relative;
@@ -9,24 +13,34 @@
   &__wrapper {
     position: relative;
     padding-top: 64px;
-    padding-bottom: 253px;
+    @include adaptiveValue('padding-top', 42, 18, 1024, 320, 3);
+    @include adaptiveValue('padding-bottom', 253, 169, 1330, 320, 1);
+
+      // @include adaptiveValueModified("padding-bottom", 10, 169, 320, 169, 576, 263, 1024, 263);
+      // @include adaptiveValueModified("padding-top", 10, 18, 320, 18, 576, 42, 1024, 42);
+
+
+
 
     &::after {
-      @include adaptiveValueModified("top", 10, 0, 1024, 0, 1025, -58, 1200, -69, 1330, -77, 1600, -77);
-      @include adaptiveValue("width", 610, 550, 1330, 1024);
-      @include adaptiveValue("height", 465, 350, 1330, 1024);
+      // @include adaptiveValueModified("--top", 10, 0, 1024, 0, 1025, -58, 1200, -69, 1330, -77, 1600, -77);
+      @include adaptiveValue('--top', 77, 58, 1200, 1024, 2);
 
       content: "";
       position: absolute;
+      top: calc(-1 * var(--top));
       left: 0;
       right: 0;
       z-index: 0;
       margin: 0 auto;
+      @include adaptiveValue("width", 610, 550, 1200, 1024, 2);
+      @include adaptiveValue("height", 465, 350, 1200, 1024, 2);
       background-image: url("/img/testimonials.png");
       background-size: contain;
       background-repeat: no-repeat;
 
       @include tablet {
+        top: 0;
         width: 100%;
         height: 100%;
         background-image: url("/img/testimonials-mobile.png");
@@ -39,26 +53,19 @@
         width: 90%;
         height: 100%;
       }
-
-      @include se {
-        top: -15px;
-      }
     }
 
     @include tablet {
-      @include adaptiveValueModified("padding-bottom", 10, 169, 320, 169, 576, 263, 1024, 263);
-
       overflow: hidden;
       padding-top: 42px;
-    }
-
-    @include land {
-      @include adaptiveValueModified("padding-top", 10, 18, 320, 18, 576, 42, 1024, 42);
     }
   }
 
   &__slider-container {
-    @include adaptiveValueModified("margin-top", 10, -143, 320, -143, 767, -192, 1024, -175, 1600, -175);
+    // @include adaptiveValueModified("margin-top", 10, -143, 320, -143, 767, -192, 1024, -175, 1600, -175);
+    @include adaptiveValue('--margin-top', 175, 192, 1024, 767, 2);
+    @include adaptiveValue('--margin-top', 192, 143, 767, 320, 3);
+    margin-top: calc(-1 * var(--margin-top));
 
     position: relative;
     overflow: hidden;
@@ -67,7 +74,9 @@
   }
 
   &__title {
-    @include adaptiveValueModified("max-width", 10, 170, 320, 170, 1024, 300, 1330, 346, 1600, 346);
+    // @include adaptiveValueModified("max-width", 10, 170, 320, 170, 1024, 300, 1330, 346, 1600, 346);
+    max-width: 346px;
+    @include adaptiveValue('max-width', 300, 170, 1024, 320, 3);
 
     z-index: 2;
   }
@@ -79,6 +88,7 @@
     padding-left: 81px;
     max-width: 1300px;
 
+    // 
     @include bigtablet {
       padding-right: 15px;
     }
@@ -132,16 +142,6 @@
     @include se {
       display: block;
     }
-
-    &--next+li {
-      @include tablet {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
-
-    &--active+li {}
-
     /* --------------------------------- */
   }
 
@@ -217,7 +217,8 @@
   }
 
   &__name {
-    @include adaptiveValueModified("--fz", 10, 14, 320, 14, 576, 18, 1600, 18);
+    // @include adaptiveValueModified("--fz", 10, 14, 320, 14, 576, 18, 1600, 18);
+    @include adaptiveValue('--fz', 18, 14, 576, 320, 1);
     @include line-clamp-new(var(--fz), 1.2, 2, 700, 1);
 
     max-width: 245px;

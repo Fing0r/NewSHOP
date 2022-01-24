@@ -33,3 +33,39 @@
     @content;
   }
 }
+
+// @mixin bigtablet {
+//   @media (max-width: em(1400)) {
+//     @content;
+//   }
+// }
+
+// @mixin xl {
+//   @media (max-width: em(1200)) {
+//     @content;
+//   }
+// }
+
+// @mixin tablet {
+//   @media (max-width: em(1024)) {
+//     @content;
+//   }
+// }
+
+// @mixin mobile {
+//   @media (max-width: em(767)) {
+//     @content;
+//   }
+// }
+
+// @mixin land {
+//   @media (max-width: em(576)) {
+//     @content;
+//   }
+// }
+
+// @mixin se {
+//   @media (max-width: em(375)) {
+//     @content;
+//   }
+// }

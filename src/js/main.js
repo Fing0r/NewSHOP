@@ -1,3 +1,7 @@
+
+  
+  
+  
   function spanPercent() {
     let elementsData = document.querySelectorAll('.apartment-card__percent');
     elementsData.forEach(elData => {
@@ -13,7 +17,6 @@
   });
 
   AOS.init({
-    // disable: true,
     once: true,
     duration: 1000,
   });

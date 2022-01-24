@@ -87,6 +87,8 @@ class Modal {
 		this.modal.classList.add('is-open');
 		this.disableScroll();
 
+    
+
 		this.modalContainer.classList.add('modal-open');
 		this.modalContainer.classList.add(this.animation);
 
@@ -147,7 +149,6 @@ class Modal {
 		document.body.dataset.position = pagePosition;
 		document.body.style.top = -pagePosition + 'px';
 	}
-
 	enableScroll() {
 		let pagePosition = parseInt(document.body.dataset.position, 10);
 		this.unlockPadding();
@@ -155,7 +156,8 @@ class Modal {
 		document.body.classList.remove('disable-scroll');
 		window.scrollTo({
 			top: pagePosition,
-			left: 0
+			left: 0,
+      behavior: "instant"
 		});
 		document.body.removeAttribute('data-position');
 	}

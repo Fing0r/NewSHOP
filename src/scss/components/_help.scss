@@ -1,7 +1,16 @@
 .help {
   &__title {
-    @include adaptiveValueModified("margin-bottom", 10, 10, 576, 10, 577, 25, 767, 25, 1024, 46, 1600, 46);
-    @include adaptiveValueModified("max-width", 10, 130, 320, 130, 576, 160, 767, 180, 1024, 350, 1600, 350);
+    @include adaptiveValue('margin-bottom', 46, 25, 1024, 576, 2);
+    @include adaptiveValue('max-width', 350, 180, 1024, 767, 2);
+    @include adaptiveValue('max-width', 180, 130, 767, 320, 3);
+
+        // @include adaptiveValueModified("margin-bottom", 10, 10, 576, 10, 577, 25, 767, 25, 1024, 46, 1600, 46);
+        // @include adaptiveValueModified("max-width", 10, 130, 320, 130, 576, 160, 767, 180, 1024, 350, 1600, 350);
+
+
+    @include land {
+      margin-bottom: 10px;
+    }
   }
 
   &__info {
@@ -11,8 +20,16 @@
   }
 
   &__wrapper {
-    @include adaptiveValueModified("padding-top", 10, 18, 320, 18, 767, 30, 1200, 45, 1330, 70, 1600, 70);
-    @include adaptiveValueModified("padding-bottom", 10, 18, 320, 18, 767, 30, 1200, 45, 1330, 70, 1600, 70);
+    // @include adaptiveValueModified("padding-top", 10, 18, 320, 18, 767, 30, 1200, 45, 1330, 70, 1600, 70);
+
+    @include adaptiveValue('padding-top', 70, 30, 1330, 767, 2);
+    @include adaptiveValue('padding-top', 30, 18, 767, 320, 3);
+
+    @include adaptiveValue('padding-bottom', 70, 30, 1330, 767, 2);
+    @include adaptiveValue('padding-bottom', 30, 18, 767, 320, 3);
+    // padding-top: var(--padding);
+    // padding-bottom: var(--padding);
+    // @include adaptiveValueModified("padding-bottom", 10, 18, 320, 18, 767, 30, 1200, 45, 1330, 70, 1600, 70);
 
     position: relative;
     display: flex;
@@ -77,10 +94,6 @@
     width: 461px;
     object-fit: cover;
     transform: translateX(-19.5%);
-
-    @include bigtablet {
-      width: 370px;
-    }
 
     @include xl {
       position: absolute;

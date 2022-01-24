@@ -1,5 +1,5 @@
 {
-  "css/style.css": "css/style-27cba82846.css",
+  "css/style.css": "css/style-3850e9bf02.css",
   "fonts/Geometria-Bold.woff2": "fonts/Geometria-Bold-2b2ff4d97e.woff2",
   "fonts/Geometria-Heavy.woff2": "fonts/Geometria-Heavy-09d5620014.woff2",
   "fonts/Geometria-Medium.woff2": "fonts/Geometria-Medium-2b93df6af7.woff2",
@@ -59,7 +59,7 @@
   "img/safe.png": "img/safe-e9c4049802.png",
   "img/selection.png": "img/selection-267c4cb4f0.png",
   "img/specialists.png": "img/specialists-62fb1c6624.png",
-  "img/sprite.svg": "img/sprite-0285fde9be.svg",
+  "img/sprite.svg": "img/sprite-23d849bddd.svg",
   "img/star.svg": "img/star-7b99294e32.svg",
   "img/sub-mobile.png": "img/sub-mobile-b798d2ac0b.png",
   "img/sub.png": "img/sub-a44aff7c2f.png",
@@ -68,6 +68,6 @@
   "img/testimonials-3.jpg": "img/testimonials-3-645bd520ba.jpg",
   "img/testimonials-mobile.png": "img/testimonials-mobile-c8be07d099.png",
   "img/testimonials.png": "img/testimonials-8548c3afee.png",
-  "js/main.js": "js/main-58284b94b1.js",
-  "js/vendor.js": "js/vendor-44f46a4e6f.js"
+  "js/main.js": "js/main-7a67fdf1a7.js",
+  "js/vendor.js": "js/vendor-8d72f018c6.js"
 }

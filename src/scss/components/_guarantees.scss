@@ -47,15 +47,19 @@
   }
 
   &__box {
-    @include adaptiveValueModified("--padding", 10, 22, 320, 22, 767, 35, 1022, 49, 1023, 49);
+    // @include adaptiveValueModified("--padding", 10, 22, 320, 22, 767, 35, 1022, 49, 1023, 49);
+    @include adaptiveValue('padding-left', 49, 35, 1024, 767);
+    @include adaptiveValue('padding-left', 35, 22, 767, 320, 3);
 
-    @include tablet {
-      padding: 0 var(--padding);
-    }
+    @include adaptiveValue('padding-right', 49, 35, 1024, 767);
+    @include adaptiveValue('padding-right', 35, 22, 767, 320, 3);
+    // padding: 0 var(--padding);
   }
 
   &__descr {
-    @include adaptiveValueModified("margin-bottom", 10, 22, 320, 22, 767, 26, 1024, 39, 1200, 60, 1600, 60);
+    // @include adaptiveValueModified("margin-bottom", 10, 22, 320, 22, 767, 26, 1024, 39, 1200, 60, 1600, 60);
+    @include adaptiveValue('margin-bottom', 60, 39, 1330, 1024, 2);
+    @include adaptiveValue('margin-bottom', 39, 22, 1024, 320, 3);
 
     max-width: 321px;
 
@@ -86,11 +90,11 @@
     }
 
     @include mobile {
-      flex-flow: column;
-      align-items: center;
+      display: grid;
+      justify-content: center;
       margin-bottom: 29px;
       height: auto;
-      gap: 13px;
+      grid-gap: 13px;
     }
   }
 

@@ -11,7 +11,8 @@ if (examplesSlider) {
     slideDuplicateClass: 'examples__slide--dupl',
     /*---------------------------------*/
     loop: true,
-    // slidesPerView: 2,
+    slidesPerView: 2,
+
     // spaceBetween: 87,
     navigation: {
       nextEl: '.arrow--next',
@@ -41,11 +42,9 @@ if (examplesSlider) {
       },
       1200: {
         slidesPerView: 2,
-        // spaceBetween: 0,
       },
       1400: {
         slidesPerView: 2,
-        //  spaceBetween: 87,
       },
     }
   })
@@ -90,31 +89,5 @@ if (tesimonialsSlider) {
         slidesPerView: 3,
       }
     }
-    //  breakpoints: {
-    // 320: {
-    //   slidesPerView: 1,
-    //   spaceBetween: 50,
-    // },
-    // 556: {
-    //   slidesPerView: 1,
-    //   spaceBetween: 100,
-    // },
-    // 768: {
-    //   slidesPerView: 1,
-    //   spaceBetween: 16
-    // },
-    // 1024: {
-    //   slidesPerView: 2,
-    //   // spaceBetween: 110,
-    // },
-    // 1200: {
-    //   slidesPerView: 2,
-    //   // spaceBetween: 0,
-    // },
-    // 1400: {
-    //   slidesPerView: 3,
-    // //  spaceBetween: 87,
-    // },
-    // }
   })
 }

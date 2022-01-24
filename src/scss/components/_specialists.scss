@@ -1,7 +1,12 @@
 .specialists {
   &__wrapper {
-    @include adaptiveValueModified("padding-top", 320, 21, 576, 21, 1024, 40, 1330, 68, 1600, 68);
-    @include adaptiveValueModified("padding-bottom", 320, 254, 576, 254, 1024, 268, 1330, 202, 1600, 202);
+    // @include adaptiveValueModified("padding-top", 320, 21, 576, 21, 1024, 40, 1330, 68, 1600, 68);
+    // @include adaptiveValueModified("padding-bottom", 320, 254, 576, 254, 1024, 268, 1330, 202, 1600, 202);
+    @include adaptiveValue('padding-top', 68, 40, 1330, 1024, 2);
+    @include adaptiveValue('padding-top', 40, 21, 1024, 576, 3);
+    @include adaptiveValue('padding-bottom', 202, 268, 1330, 1024, 2);
+    @include adaptiveValue('padding-bottom', 268, 254, 1024, 576, 3);
+
 
     position: relative;
     overflow: hidden;
@@ -26,7 +31,7 @@
     height: 449px;
     transform: translateX(-64%);
 
-    @include bigtablet {
+    @include xl {
       transform: translateX(-40%);
     }
 
@@ -50,7 +55,9 @@
   }
 
   &__title {
-    @include adaptiveValueModified("max-width", 320, 155, 576, 155, 767, 230, 1024, 250, 1600, 250);
+    // @include adaptiveValueModified("max-width", 320, 155, 576, 155, 767, 230, 1024, 250, 1600, 250);
+    @include adaptiveValue('max-width', 250, 230, 1024, 767, 2);
+    @include adaptiveValue('max-width', 230, 155, 767, 576, 3);
 
     z-index: 2;
   }
@@ -58,7 +65,12 @@
   &__list {
     --list-gap: 41px;
 
-    @include adaptiveValueModified("margin-top", 320, -69, 576, -69, 767, -112, 1400, -158, 1600, -158);
+    // @include adaptiveValueModified("margin-top", 320, -69, 576, -69, 767, -112, 1400, -158, 1600, -158);
+
+    @include adaptiveValue('--margin-top', 158, 112, 1330, 767, 2);
+    @include adaptiveValue('--margin-top', 112, 69, 767, 576, 3);
+
+    margin-top: calc(-1 * var(--margin-top));
 
     position: relative;
     z-index: 2;
@@ -184,7 +196,7 @@
   }
 }
 
-.masonry__item {
+.masonry-item {
   position: absolute;
   top: 0;
   display: flex;

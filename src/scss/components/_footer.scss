@@ -1,13 +1,24 @@
 .footer {
-  @include adaptiveValueModified("padding-top", 10, 31, 320, 31, 1024, 61, 1600, 61);
-  @include adaptiveValueModified("padding-bottom", 10, 22, 320, 22, 1024, 57, 1330, 92, 1600, 92);
+  // @include adaptiveValueModified("padding-top", 10, 31, 320, 31, 1024, 61, 1600, 61);
+  @include adaptiveValue('padding-top', 61, 31, 1024, 320, 1);
+  @include adaptiveValue('padding-bottom', 92, 57, 1330, 1024, 2);
+  @include adaptiveValue('padding-bottom', 57, 22, 1024, 320, 3);
+
+
+  // @include adaptiveValueModified("padding-bottom", 10, 22, 320, 22, 1024, 57, 1330, 92, 1600, 92);
 
   color: var(--color-white);
   background-color: #093f66;
 
   &__container {
-    @include adaptiveValueModified("padding-right", 10, 22, 320, 22, 1024, 47, 1330, 90, 1600, 90);
-    @include adaptiveValueModified("padding-left", 10, 22, 320, 22, 1024, 47, 1330, 90, 1600, 90);
+    // @include adaptiveValueModified("--padding", 10, 22, 320, 22, 1024, 47, 1330, 90, 1600, 90);
+    @include adaptiveValue('padding-left', 90, 47, 1330, 1024, 2);
+    @include adaptiveValue('padding-left', 47, 22, 1024, 320, 3);
+
+    @include adaptiveValue('padding-right', 90, 47, 1330, 1024, 2);
+    @include adaptiveValue('padding-right', 47, 22, 1024, 320, 3);
+    // padding-left: var(--padding);
+    // padding-right: var(--padding);
 
     display: flex;
     justify-content: space-between;

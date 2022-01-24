@@ -1,5 +1,7 @@
 .download {
-  @include adaptiveValueModified("margin-bottom", 10, 40, 320, 40, 767, 20, 1330, 40, 1600, 40);
+  // @include adaptiveValueModified("margin-bottom", 10, 40, 320, 40, 767, 20, 1330, 40, 1600, 40);
+  @include adaptiveValue('margin-bottom', 40, 20, 1330, 767, 2);
+  @include adaptiveValue('margin-bottom', 20, 40, 767, 320, 3);
 
   &__container {
     padding-left: 95px;
@@ -32,29 +34,44 @@
   }
 
   &__catalog {
-    @include adaptiveValueModified("--padding", 10, 15, 320, 15, 576, 30, 1200, 58, 1201, 0, 1330, 0);
-    @include adaptiveValueModified("margin-bottom", 10, 32, 320, 32, 1200, 66, 1201, 0, 1600, 0);
+    // @include adaptiveValueModified("--padding", 10, 15, 320, 15, 576, 30, 1200, 58, 1201, 0, 1330, 0);
+    // @include adaptiveValueModified("margin-bottom", 10, 32, 320, 32, 1200, 66, 1201, 0, 1600, 0);
+    @include adaptiveValue('padding-left', 58, 30, 1200, 576);
+    @include adaptiveValue('padding-left', 30, 15, 576, 320, 3);
+
+    @include adaptiveValue('padding-right', 58, 30, 1200, 576);
+    @include adaptiveValue('padding-right', 30, 15, 576, 320, 3);
+
+    @include adaptiveValue('margin-bottom', 66, 32, 1200, 320, 3);
 
     margin-right: 22px;
     padding: 16px 0 39px;
 
     @include xl {
       margin-right: 0;
-      padding: 0 var(--padding);
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 
   &__title {
     margin-bottom: 179px;
-    @include adaptiveValueModified("max-width", 10, 250, 320, 250, 567, 330, 767, 470, 1024, 550, 1600, 550);
-    @include adaptiveValueModified("margin-bottom", 10, 28, 320, 28, 567, 40, 767, 65, 1199, 90, 1200, 179, 1330, 179);
+    // @include adaptiveValueModified("max-width", 10, 250, 320, 250, 567, 330, 767, 470, 1024, 550, 1600, 550);
+
+    // @include adaptiveValueModified("margin-bottom", 10, 28, 320, 28, 567, 40, 767, 65, 1199, 90, 1200, 179, 1330, 179);
+
+    @include adaptiveValue('margin-bottom', 90, 65, 1200, 767);
+    @include adaptiveValue('margin-bottom', 65, 28, 767, 320, 3);
+
+    @include adaptiveValue('max-width', 550, 470, 1024, 767, 2);
+    @include adaptiveValue('max-width', 470, 240, 767, 320, 3);
   }
 
   &__list {
     display: grid;
     grid-template-columns: 255px 295px;
     margin-left: -18px;
-    gap: 89px 26px;
+    grid-gap: 89px 26px;
 
     @include bigtablet {
       margin-left: 0;
@@ -64,7 +81,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      @include adaptiveValue("gap", 30, 10, 1200, 320);
+      @include adaptiveValue("grid-gap", 30, 10, 1200, 320, 1);
     }
   }
 
@@ -73,7 +90,10 @@
     padding-top: 28px;
     padding-left: 91px;
     min-height: 82px;
-    @include adaptiveValueModified("max-width", 10, 230, 320, 230, 567, 280, 1024, 300, 1600, 300);
+    // @include adaptiveValueModified("max-width", 10, 230, 320, 230, 567, 280, 1024, 300, 1600, 300);
+
+    @include adaptiveValue('max-width', 300, 280, 1024, 567, 2);
+    @include adaptiveValue('max-width', 280, 230, 567, 320, 3);
 
 
     &::after {
@@ -119,7 +139,10 @@
   }
 
   &__descr {
-    @include adaptiveValueModified("font-size", 10, 12, 320, 12, 567, 16, 767, 18, 1600, 18);
+    // @include adaptiveValueModified("font-size", 10, 12, 320, 12, 567, 16, 767, 18, 1600, 18);
+
+    @include adaptiveValue('font-size', 18, 16, 767, 567, 2);
+    @include adaptiveValue('font-size', 16, 12, 567, 320, 3);
 
     font-weight: 500;
   }
@@ -171,7 +194,10 @@
 
   &__title {
     z-index: 2;
-    @include adaptiveValueModified("max-width", 10, 100, 320, 100, 576, 200, 767, 240, 1024, 291, 1600, 291);
+    // @include adaptiveValueModified("max-width", 10, 100, 320, 100, 576, 200, 767, 240, 1024, 291, 1600, 291);
+
+    @include adaptiveValue('max-width', 291, 200, 1024, 576, 2);
+    @include adaptiveValue('max-width', 200, 100, 576, 320, 3);
   }
 
   &__btn {

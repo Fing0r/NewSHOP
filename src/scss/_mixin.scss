@@ -7,7 +7,7 @@
 @import "./mixin/mask";
 @import "./mixin/adap";
 
-@mixin adaptiveValue($property, $maxSize, $minSize, $maxWidth, $minWidth, $num: 0) {
+@mixin adaptiveValue1($property, $maxSize, $minSize, $maxWidth, $minWidth, $num: 0) {
   $minSizeRem: calc($minSize / 16) + rem;
   $maxSizeRem: calc($maxSize / 16) + rem;
   $slope: calc(($maxSize - $minSize) / ($maxWidth - $minWidth));

@@ -11,7 +11,8 @@
   }
 
   &__content {
-    @include adaptiveValueModified("margin-bottom", 320, 29, 767, 29, 1024, 46, 1025, 0, 1600, 0);
+    // @include adaptiveValueModified("margin-bottom", 320, 29, 767, 29, 1024, 46, 1025, 0, 1600, 0);
+    @include adaptiveValue('margin-bottom', 46, 29, 1024, 767, 3);
 
     margin-right: 15px;
 
@@ -27,7 +28,9 @@
   }
 
   &__title {
-    @include adaptiveValueModified("max-width", 10, 220, 320, 220, 767, 330, 1024, 490, 1600, 490);
+    // @include adaptiveValueModified("max-width", 10, 220, 320, 220, 767, 330, 1024, 490, 1600, 490);
+    @include adaptiveValue('max-width', 490, 330, 1024, 767, 2);
+    @include adaptiveValue('max-width', 330, 220, 767, 320, 3);
 
     margin-bottom: 55px;
 
@@ -278,8 +281,11 @@
 }
 
 .dynamics-invest {
-  @include adaptiveValueModified("--padding-vert", 10, 25, 320, 25, 767, 40, 1024, 35, 1600, 35);
-  @include adaptiveValueModified("--padding-gor", 10, 35, 320, 35, 767, 45, 1024, 45, 1600, 45);
+  // @include adaptiveValueModified("--padding-vert", 10, 25, 320, 25, 767, 40, 1024, 35, 1600, 35);
+  // @include adaptiveValueModified("--padding-gor", 10, 35, 320, 35, 767, 45, 1024, 45, 1600, 45);
+  @include adaptiveValue('--padding-vert', 35, 40, 1330, 767, 2);
+  @include adaptiveValue('--padding-vert', 40, 25, 767, 320, 3);
+  @include adaptiveValue('--padding-gor', 45, 35, 767, 320, 1);
 
   position: relative;
   display: flex;
@@ -294,8 +300,10 @@
   background-color: var(--color-dodger-blue);
 
   &__title {
-    @include adaptiveValueModified("max-width", 320, 145, 576, 145, 767, 165, 1600, 165);
-    @include adaptiveValueModified("font-size", 320, 16, 576, 16, 767, 18, 1600, 18);
+    // @include adaptiveValueModified("max-width", 320, 145, 576, 145, 767, 165, 1600, 165);
+    // @include adaptiveValueModified("font-size", 320, 16, 576, 16, 767, 18, 1600, 18);
+    @include adaptiveValue('max-width', 165, 145, 767, 320, 1);
+    @include adaptiveValue('font-size', 18, 16, 767, 320, 1);
 
     z-index: 1;
     margin-bottom: 224px;
